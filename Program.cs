@@ -19,15 +19,16 @@ namespace Calculator
         }
         static void Cal(double number1)
         {
-            if (symbol == "V" || symbol == "!")
+            for (int i = 0; i < 10; i++)
             {
-                for (int i = 0; i < 10; i++)
-                {
-                    double number2 = 0;
-                    string symbol;
-                    Console.WriteLine("Wpisz znak");
-                    symbol = Console.ReadLine();
 
+                double number2 = 0;
+                string symbol;
+                Console.WriteLine("Wpisz znak");
+                symbol = Console.ReadLine();
+
+                if (symbol == "V" || symbol == "!")
+                {
                     if (symbol == "V")
                     {
                         number1 = Math.Sqrt(number1);
@@ -42,8 +43,8 @@ namespace Calculator
                         }
                     }
                     Console.WriteLine(Math.Round(number1, 2));
-                    Console.WriteLine("Wpisz znak");
-                    symbol = Console.ReadLine();
+                    Cal(number1);
+
                 }
 
                 Console.WriteLine("Wpisz numer");
@@ -92,8 +93,8 @@ namespace Calculator
                 }
 
                 Console.WriteLine(Math.Round(number1, 2));
-
             }
+            
         }
     }
 }
